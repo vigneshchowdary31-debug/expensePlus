@@ -41,7 +41,7 @@ fun MonthlyExpenseGraphScreen(expenses: List<Expense>, navController: NavControl
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Monthly Expense Graph") },
+                title = { Text("Monthly Expenses") },
                 actions = {
                     ExposedDropdownMenuBox(
                         expanded = yearExpanded,
@@ -55,7 +55,7 @@ fun MonthlyExpenseGraphScreen(expenses: List<Expense>, navController: NavControl
                             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = yearExpanded) },
                             modifier = Modifier
                                 .menuAnchor()
-                                .width(100.dp) // Shrink the width
+                                .width(120.dp) // Shrink the width
                         )
                         ExposedDropdownMenu(
                             expanded = yearExpanded,
@@ -110,7 +110,7 @@ fun MonthlyExpenseGraphScreen(expenses: List<Expense>, navController: NavControl
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text("No expenses to display graph for $selectedYear.", style = MaterialTheme.typography.titleMedium)
+                    Text("No expenses to display for $selectedYear.", style = MaterialTheme.typography.titleMedium)
                 }
             } else {
                 MonthlyBarGraph(

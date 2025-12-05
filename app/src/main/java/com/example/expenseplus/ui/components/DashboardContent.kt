@@ -71,12 +71,12 @@ fun DashboardContent(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 16.dp)
+            .padding(horizontal = 20.dp)
     ) {
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 8.dp),
+                .padding(top = 40.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
         ) {
             Column(
@@ -108,7 +108,7 @@ fun DashboardContent(
             modifier = Modifier.padding(bottom = 8.dp)
         )
         if (expensesByCategory.isEmpty()) {
-            Text("No categorized expenses yet for this month.", modifier = Modifier.padding(bottom = 16.dp))
+            Text("No expenses yet.", modifier = Modifier.padding(bottom = 16.dp))
         } else {
             LazyRow(
                 modifier = Modifier.fillMaxWidth(),
@@ -168,7 +168,7 @@ fun DashboardContent(
         }
 
         if (filteredExpenses.isEmpty()) {
-            Text("No expenses yet. Click the + button to add one!", modifier = Modifier.padding(bottom = 16.dp))
+            Text("No expenses yet.", modifier = Modifier.padding(bottom = 16.dp))
         } else {
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
